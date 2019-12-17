@@ -1,0 +1,64 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ a {
+    color: white;
+  }
+
+ .icon-block {
+ 	padding: 0 15px;
+ }
+ .icon-block .material-icons {
+ 	font-size: inherit;
+ }
+ /* <- Demo Stuff Start */
+
+ body{
+ 	font-family: 'Roboto', sans-serif;
+ 	margin:0;
+ }
+
+ .btn-1 {
+ 	background-image: linear-gradient(#f6d365 10%, #fda085 51%, #f6d365 100%);
+ }
+
+ .btn-2 {
+ 	background-image: linear-gradient(#9b59b6 0%, #d2b5cc 85%, #edd5e6 100%);
+ }
+
+.btn-2-copy {
+ 	background-image: linear-gradient(#9b59b6 0%, #d2b5cc 100%, #edd5e6 100%);
+ }
+
+ .btn-3 {
+ 	background-image: linear-gradient(#84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+ }
+
+ .btn-4 {
+ 	background-image: linear-gradient(#a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+ }
+
+ .btn-5 {
+ 	background-image: linear-gradient(#ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+ }
+
+.img-profile {
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
+
+@mixin pixelated {
+-ms-interpolation-mode: nearest-neighbor; // IE 7+ (non-standard property)
+image-rendering: -webkit-optimize-contrast; // Safari 6, UC Browser 9.9
+image-rendering: -webkit-crisp-edges; // Safari 7+
+image-rendering: -moz-crisp-edges; // Firefox 3.6+
+image-rendering: -o-crisp-edges; // Opera 12
+image-rendering: pixelated; // Chrome 41+ and Opera 26+
+}
+
+/* Magic Stuff End -> */
