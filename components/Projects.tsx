@@ -4,17 +4,21 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import type { Project } from '@/types';
 import { projects } from '@/data/projects';
+import { useModal } from '@/contexts/ModalContext';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const { openModal, closeModal } = useModal();
 
-  const openModal = (project: Project) => {
+  const openProjectModal = (project: Project) => {
     setSelectedProject(project);
+    openModal();
     document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = () => {
+  const closeProjectModal = () => {
     setSelectedProject(null);
+    closeModal();
     document.body.style.overflow = 'unset';
   };
 
@@ -22,7 +26,7 @@ export default function Projects() {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && selectedProject) {
-        closeModal();
+        closeProjectModal();
       }
     };
 
@@ -60,7 +64,7 @@ export default function Projects() {
                 <div
                   key={index}
                   className="bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer group flex flex-col hover:scale-105 hover:-translate-y-2"
-                  onClick={() => openModal(project)}
+                  onClick={() => openProjectModal(project)}
                 >
                   {/* Header Image */}
                   <div className="w-full h-58 relative overflow-hidden p-4">
@@ -120,7 +124,7 @@ export default function Projects() {
                         }}
                         onClick={(e) => {
                           e.stopPropagation();
-                          openModal(project);
+                          openProjectModal(project);
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor = '#C06C84';
@@ -146,7 +150,7 @@ export default function Projects() {
       {selectedProject && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
-          onClick={closeModal}
+          onClick={closeProjectModal}
         >
           <div
             className="bg-white dark:bg-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all modal-animate"
@@ -160,7 +164,7 @@ export default function Projects() {
                 </h3>
               </div>
               <button
-                onClick={closeModal}
+                onClick={closeProjectModal}
                 className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 transition-colors"
                 aria-label="Close modal"
               >

@@ -74,7 +74,8 @@ my-portfolio/
 │   ├── Footer.tsx          # Footer with copyright text
 │   └── BackToTop.tsx       # Floating Lottie rocket back-to-top button
 ├── contexts/
-│   └── ThemeContext.tsx    # Theme context provider (light/dark mode)
+│   ├── ThemeContext.tsx    # Theme context provider (light/dark mode)
+│   └── ModalContext.tsx    # Modal state context for managing project dialog visibility
 ├── data/
 │   ├── experiences.ts      # Work experience data (separated from UI)
 │   └── projects.ts         # Projects data (separated from UI)
