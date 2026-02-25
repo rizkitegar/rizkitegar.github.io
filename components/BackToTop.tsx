@@ -3,9 +3,11 @@
 import Lottie from 'lottie-react';
 import rocketAnimation from '@/public/animations/Rocket Lunch.json';
 import { useScrolledPast } from '@/hooks/useScrollPosition';
+import { useModal } from '@/contexts/ModalContext';
 
 export default function BackToTop() {
   const isVisible = useScrolledPast(300);
+  const { isModalOpen } = useModal();
 
   // Scroll to top smoothly
   const scrollToTop = () => {
@@ -17,7 +19,7 @@ export default function BackToTop() {
 
   return (
     <>
-      {isVisible && (
+      {isVisible && !isModalOpen && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 w-20 h-20 transition-all duration-300 transform hover:scale-125 hover:-translate-y-3 flex items-center justify-center group"
