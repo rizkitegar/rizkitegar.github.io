@@ -86,55 +86,55 @@ export default function Experience() {
                 </div>
                 
                 {/* Experience Card - always on the right */}
-                <div className="flex-1 ml-16 md:ml-24">
-                  <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 md:p-8 border border-slate-200 dark:border-slate-700">
+                <div className="flex-1 ml-12 md:ml-24 w-full">
+                  <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 md:p-8 border border-slate-200 dark:border-slate-700">
                     {/* Header */}
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-4">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 break-words">
                           {exp.position}
                         </h3>
-                        <div className="flex items-center gap-2 font-semibold mb-2">
+                        <div className="flex items-center gap-2 font-semibold mb-2 flex-wrap">
                           <span style={{ color: '#C06C84' }}>{exp.company}</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end gap-2">
+                      <div className="flex flex-col gap-2 sm:items-end flex-shrink-0">
                         <span 
-                          className="px-4 py-1.5 text-white text-sm font-semibold rounded-full shadow-md whitespace-nowrap"
+                          className="px-3 py-1 sm:px-4 sm:py-1.5 text-white text-xs sm:text-sm font-semibold rounded-full shadow-md whitespace-nowrap w-fit"
                           style={{
                             background: 'linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)'
                           }}
                         >
                           {exp.duration}
                         </span>
-                        <div className="flex items-center gap-1 text-sm text-slate-500 dark:text-slate-400">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex items-center gap-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                          <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
-                          <span>{exp.location}</span>
+                          <span className="break-words">{exp.location}</span>
                         </div>
                       </div>
                     </div>
                     
                     {/* Description or Projects */}
                     {exp.projects ? (
-                      <div className="space-y-6">
+                      <div className="space-y-4 md:space-y-6">
                         {exp.projects.map((project, projectIndex) => (
-                          <div key={projectIndex} className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-5 border border-slate-200 dark:border-slate-700">
-                            <div className="flex items-start justify-between gap-4 mb-3">
-                              <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                          <div key={projectIndex} className="bg-slate-50 dark:bg-slate-700 rounded-lg md:rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-4 md:p-5 border border-slate-200 dark:border-slate-600">
+                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
+                              <h4 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 dark:text-white break-words">
                                 {project.name}
                               </h4>
-                              <div className="flex flex-col gap-1 items-end">
-                                <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 text-xs">
-                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="flex flex-col gap-1 sm:items-end flex-shrink-0">
+                                <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-xs">
+                                  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                   </svg>
                                   <span className="whitespace-nowrap">{project.duration}</span>
                                 </div>
-                                <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-500 text-xs">
-                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-xs">
+                                  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                   </svg>
                                   <span className="whitespace-nowrap">{getDurationLength(project.duration)}</span>
@@ -145,9 +145,9 @@ export default function Experience() {
                               {project.description.map((item, itemIndex) => (
                                 <li
                                   key={itemIndex}
-                                  className="flex items-start text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
+                                  className="flex items-start text-slate-700 dark:text-slate-300 text-xs md:text-sm leading-relaxed"
                                 >
-                                  <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#C06C84' }}></div>
+                                  <div className="w-2 h-2 rounded-full mt-1.5 md:mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#C06C84' }}></div>
                                   <span>{item}</span>
                                 </li>
                               ))}
@@ -156,7 +156,7 @@ export default function Experience() {
                         ))}
                       </div>
                     ) : (
-                      <ul className="space-y-3">
+                      <ul className="space-y-2 md:space-y-3">
                         {exp.description?.map((item, itemIndex) => (
                           <li
                             key={itemIndex}
