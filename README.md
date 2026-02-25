@@ -21,10 +21,10 @@ A modern, responsive portfolio website built with Next.js 16 showcasing Tegar Ri
 ## About
 
 - **Title:** Tegar Rizki Wirandhana — Software Engineer Portfolio
-- **Description:** A modern, responsive portfolio website built with Next.js 16 showcasing professional experience, projects, and skills as a Software Engineer specializing in Android (Kotlin/Java), MVVM, Clean Architecture, RESTful APIs, and AI engineering.
+- **Description:**A modern, responsive portfolio website built with Next.js 16, showcasing professional experience, projects, and technical expertise as a Software Engineer specializing in Android Native development (Kotlin/Java). Experienced in Backend and Infrastructure Engineering, and currently contributing as an AI Engineer.
 - **Version:** 1.0.0
 - **Last Updated:** 2026-02-25
-- **Live Demo:** *(coming soon)*
+- **Live Demo:** https://rizkitegar.github.io/
 
 ---
 
@@ -54,7 +54,6 @@ A modern, responsive portfolio website built with Next.js 16 showcasing Tegar Ri
 | **State Management** | React Context API + `localStorage` |
 | **Linting** | ESLint 9 + `eslint-config-next` |
 | **CSS Processing** | PostCSS with `@tailwindcss/postcss` |
-| **Deployment** | Vercel (recommended) |
 
 ---
 
